@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0}a{color:inherit}a:hover{opacity:.85}</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--bg:#121212;--panel:#1b1b1b;--text:#ededed;--muted:#a6a6a6;--accent:#e07aa6;--onaccent:#121212;--line:rgba(237,237,237,.12);background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;min-height:100vh">
+  <div style="max-width:1080px;margin:0 auto;padding:0 clamp(18px,5vw,28px)">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 0">
+      <a href="index.html" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-size:15px;color:var(--muted)">← All projects</a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--muted)">SCARLETT KHUN CHO LAE</span>
+    </div>
+
+    <div style="padding:clamp(44px,8vw,64px) 0 48px">
+      <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase">{{ project.number }} · {{ project.kind }}</p>
+      <h1 style="margin:16px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:clamp(36px,5vw,52px);font-weight:600;letter-spacing:-.025em;line-height:1.05;max-width:26ch;text-wrap:balance">{{ project.title }}</h1>
+      <p style="margin:24px 0 0;font-size:19px;line-height:1.6;color:var(--muted);max-width:60ch;text-wrap:pretty">{{ project.description }}</p>
+      <sc-if value="{{ project.link }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ project.link }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:28px;text-decoration:none;font-size:15px;font-weight:500;padding:13px 20px;background:var(--accent);color:var(--onaccent)">{{ project.linkLabel }} ↗</a>
+      </sc-if>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;padding:0 0 80px">
+      <div style="flex:2 1 min(420px,100%);min-width:0;background:var(--panel);border:1px solid var(--line);padding:28px">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">HIGHLIGHTS</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ project.highlights }}" as="h" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:14px minmax(0,1fr);gap:12px;font-size:16px;line-height:1.6">
+              <span style="width:6px;height:6px;margin-top:10px;background:var(--accent)"></span>
+              <span style="text-wrap:pretty">{{ h }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1 1 240px;min-width:0;background:var(--panel);border:1px solid var(--line);padding:28px">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">{{ project.listLabel }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ project.parts }}" as="part" hint-placeholder-count="4">
+            <span style="font-size:14px;padding:6px 12px;border:1px solid var(--line)">{{ part }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <sc-if value="{{ project.cad }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:0 0 80px">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">{{ project.cadLabel }}</p>
+        <div style="background:var(--panel);border:1px solid var(--line);overflow:hidden">
+          {{ cadImg }}
+        </div>
+        <p style="margin:12px 0 0;font-size:14px;color:var(--muted)">{{ project.cadCaption }}</p>
+      </div>
+    </sc-if>
+    <sc-if value="{{ project.cad2 }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:0 0 80px">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">{{ project.cad2Label }}</p>
+        <div style="background:var(--panel);border:1px solid var(--line);overflow:hidden">
+          {{ cad2Img }}
+        </div>
+        <p style="margin:12px 0 0;font-size:14px;color:var(--muted)">{{ project.cad2Caption }}</p>
+      </div>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:32px 0 48px;border-top:1px solid var(--line)">
+      <a href="{{ prev.href }}" style="text-decoration:none">
+        <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--muted)">PREVIOUS</span>
+        <span style="display:block;margin-top:8px;font-size:18px;font-weight:500">{{ prev.title }}</span>
+      </a>
+      <a href="{{ next.href }}" style="text-decoration:none;text-align:right">
+        <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--muted)">NEXT</span>
+        <span style="display:block;margin-top:8px;font-size:18px;font-weight:500;color:var(--accent)">{{ next.title }} →</span>
+      </a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  projects = [
+    {id:"study-quest", number:"01", kind:"Software", title:"StudyQuest", short:"StudyQuest", link:"https://studyquest.scarlettkhun.dev/", linkLabel:"Visit StudyQuest", cad:"images/study-quest-dashboard.png", cadLabel:"INTERFACE", cadCaption:"StudyQuest home dashboard with rank progress, stats, side quests, and study matches", image:"images/study-quest.jpg",
+     description:"A gamified peer-to-peer tutoring web platform with a Java backend and an HTML/CSS frontend.",
+     highlights:["Built core features including StudyMatch, SideQuest, and Group Party, supported by an XP/leveling and daily-streak system to drive student engagement.","Designed a cyber HUD interface inspired by sci-fi heads-up displays, with a near-black grid and scanline background, cyan corner-bracket panels, and monospaced console-style readouts.","Managed the full product lifecycle, from concept and feature design through implementation and testing.","Onboarded 15 users and facilitated 3 tutoring sessions during testing."],
+     listLabel:"BUILT WITH", parts:["Java","HTML","CSS","Full-stack development"]},
+    {id:"rc-plane", number:"02", kind:"Hardware", title:"RC fixed-wing UAV (F‑22 Raptor) for hostile environment mapping", short:"RC fixed-wing UAV", image:"images/rc-plane.jpg", cad:"images/ft22-cad.png", cadLabel:"CAD MODEL", cadCaption:"FT22 airframe modelled in Autodesk Fusion, with wing, fuselage, firewall, motor, propeller, and fins", cad2:"images/ft22-inav.png", cad2Label:"FLIGHT CONTROLLER SETUP", cad2Caption:"Matek F405 connected to iNAV Configurator, with live attitude readout and all pre-arming checks passing",
+     description:"A foam-bodied F-22 Raptor UAV built as a low-cost platform for mapping hazardous environments. I led the airframe fabrication and electronics integration.",
+     highlights:["Integrated a Matek F405 Wing flight controller, BetaFPV 2.4GHz receiver, Jumper transmitter, and dual EMAX ES08MA II servos for control surface actuation, powered by a 3S/4S LiPo system.","Connected the flight controller to iNAV to configure the system and monitor live sensor data.","Mounted and bench-tested all onboard electronics, confirming working servo and receiver function."],
+     listLabel:"COMPONENTS", parts:["Matek F405 Wing","iNAV","BetaFPV 2.4GHz RX","Jumper transmitter","2× EMAX ES08MA II servos","3S/4S LiPo"]},
+    {id:"lego-robot", number:"03", kind:"Robotics", title:"Assistive robot for elderly memory support", short:"Assistive memory robot", image:"images/lego-robot.jpg", cad:"images/robot-cad.png", cadLabel:"CAD MODEL", cadCaption:"Roberto, modelled as a full assembly in Autodesk Fusion",
+     description:"Roberto is an assistive robot to support elderly memory care. I first built and programmed a working prototype in LEGO using Java, then used that design as the basis for a full 3D CAD model.",
+     highlights:["Built the first version as a LEGO prototype to test the robot's form, movement, and features.","Redesigned the robot as a 3D CAD model in Autodesk, based on the LEGO prototype.","Implemented a scheduled medication reminder system and interactive memory games for daily cognitive engagement.","Developed 2 memory games: a memory card flip and daily memory quizzes.","Validated reminder reliability across 10 test runs with 10 users from different age groups."],
+     listLabel:"BUILT WITH", parts:["Java","LEGO Robotics","3D CAD design","Embedded programming","Human-centred design"]}
+  ];
+  bgs = {
+    "Graphite": {bg:"#16181a",panel:"#1f2225",text:"#e8eaeb",muted:"#a3a9ad"},
+    "Charcoal": {bg:"#121212",panel:"#1b1b1b",text:"#ededed",muted:"#a6a6a6"}
+  };
+  accents = {
+    "Teal": "#4fd1c0",
+    "Neon green": "#9dff5c",
+    "Hot pink": "#e07aa6",
+    "Electric blue": "#4fa8ff",
+    "Neon violet": "#b388ff",
+    "Coral": "#ff7a6b",
+    "Sunny yellow": "#ffd84f",
+    "Cyan": "#3ff0ff"
+  };
+  apply() {
+    const el = this.rootRef.current;
+    if (!el) return;
+    let bgName = "Charcoal", acName = "Hot pink";
+    try { const s = JSON.parse(localStorage.getItem("sk-portfolio-theme2") || "{}"); if (this.bgs[s.bg]) bgName = s.bg; if (this.accents[s.ac]) acName = s.ac; } catch (e) {}
+    const b = this.bgs[bgName];
+    for (const k in b) el.style.setProperty("--" + k, b[k]);
+    el.style.setProperty("--accent", this.accents[acName]);
+    el.style.setProperty("--onaccent", b.bg);
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() {
+    let id = "study-quest";
+    try { id = new URLSearchParams(window.location.search).get("p") || id; } catch (e) {}
+    let i = this.projects.findIndex(p => p.id === id);
+    if (i < 0) i = 0;
+    const n = this.projects.length;
+    const link = p => ({ title: p.short, href: "project.html?p=" + p.id });
+    const games = { title: "NASA Space Apps 2026", href: "games.html" };
+    return {
+      rootRef: this.rootRef,
+      project: this.projects[i],
+      cad2Img: this.projects[i].cad2 ? React.createElement("img", { src: this.projects[i].cad2, alt: this.projects[i].cad2Caption, style: { display: "block", width: "100%", height: "auto" } }) : null,
+      cadImg: this.projects[i].cad ? React.createElement("img", { src: this.projects[i].cad, alt: this.projects[i].cadCaption, style: { display: "block", width: "100%", height: "auto" } }) : null,
+      prev: i === 0 ? games : link(this.projects[i - 1]),
+      next: i === n - 1 ? games : link(this.projects[i + 1])
+    };
+  }
+}
+</script>
+</body>
+</html>

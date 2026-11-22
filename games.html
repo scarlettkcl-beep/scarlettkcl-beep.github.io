@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=EB+Garamond:wght@400;500&family=Orbitron:wght@600;700&family=Open+Sans:wght@600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0}a{color:inherit}a:hover{opacity:.85}</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--bg:#121212;--panel:#1b1b1b;--text:#ededed;--muted:#a6a6a6;--accent:#e07aa6;--onaccent:#121212;--line:rgba(237,237,237,.12);background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;min-height:100vh">
+  <div style="max-width:1080px;margin:0 auto;padding:0 clamp(18px,5vw,28px)">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 0">
+      <a href="index.html" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-size:15px;color:var(--muted)">← All projects</a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--muted)">SCARLETT KHUN CHO LAE</span>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,56px);align-items:flex-start;padding:clamp(44px,8vw,64px) 0 clamp(44px,8vw,64px)">
+      <div style="flex:2 1 min(420px,100%);min-width:0">
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">NASA SPACE APPS · 2026</p>
+        <h1 style="margin:16px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:clamp(44px,7vw,72px);font-weight:600;letter-spacing:-.03em;line-height:1">Games</h1>
+        <p style="margin:24px 0 0;font-size:19px;line-height:1.6;color:var(--muted);max-width:52ch;text-wrap:pretty">Two 3D browser games about planetary exploration, built for NASA Space Apps. Both run in the browser with no download.</p>
+      </div>
+      <div style="flex:1 1 min(280px,100%);min-width:0;background:var(--panel);border:1px solid var(--line);padding:clamp(20px,5vw,28px)">
+        <div style="display:grid;grid-template-columns:minmax(80px,100px) minmax(0,1fr);gap:16px;font-size:15px;line-height:1.5">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">FORMAT</span>
+          <span>3D browser games</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">EVENT</span>
+          <span>NASA Space Apps 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--line);padding:clamp(44px,8vw,64px) 0 clamp(56px,10vw,96px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px">
+
+        <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);overflow:hidden">
+          <div style="position:relative;aspect-ratio:16/8;background:#000">
+            <img src="images/last-light.png" alt="Opportunity rover on the Martian surface in Last Light" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;left:16px;bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:7px 11px;background:rgba(18,18,18,.85);color:#ededed"><span style="color:var(--accent)">01 /</span> An Opportunity story</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:28px;flex:1">
+            <p style="margin:0;font-family:'Open Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8b09a">Featured project / Drive &amp; reflect</p>
+            <h2 style="margin:0;font-family:'EB Garamond',Georgia,serif;font-size:clamp(44px,6vw,60px);font-weight:400;letter-spacing:-.01em;line-height:1.05;color:#f3efe6">Last Light</h2>
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-size:14px;padding:7px 14px;background:rgba(232,176,110,.12);border:1px solid rgba(232,176,110,.35);color:#f0d9b8"><span style="width:7px;height:7px;border-radius:50%;background:#e8b06e"></span>Awaiting judging</span>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty;flex:1">An atmospheric 3D game about the Opportunity rover, created by Orion North. Trace rock layers, brush a surface, compare readings, and frame NASA observations before sending discoveries home.</p>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:var(--muted)">Rover model: NASA/JPL-Caltech</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:10px;padding-top:22px;border-top:1px solid var(--line)">
+              <a href="https://orion-north.github.io/last-light/" target="_blank" rel="noopener" style="text-decoration:none;font-size:15px;font-weight:500;padding:13px 20px;background:var(--accent);color:var(--onaccent)">Play Last Light ↗</a>
+              <a href="https://github.com/Orion-North/last-light" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:var(--muted)">Source code ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);overflow:hidden">
+          <div style="position:relative;aspect-ratio:16/8;background:#000">
+            <img src="images/ghost-rovers-brown.png" alt="Pink tracked rover on Mars surrounded by holographic lander beacons in Ghost Rovers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            <span style="position:absolute;left:16px;bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:7px 11px;background:rgba(18,18,18,.85);color:#ededed"><span style="color:var(--accent)">02 /</span> Lost machine hunt</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:28px;flex:1">
+            <p style="margin:0;font-family:'Open Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8fd3cf">Also from Space Apps</p>
+            <h2 style="margin:0;font-family:'Orbitron',sans-serif;font-size:clamp(30px,4.4vw,44px);font-weight:700;letter-spacing:-.01em;line-height:1.1;color:#f3efe6">Ghost Rovers</h2>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty;flex:1">Find forgotten space machines across the Moon and Mars, and uncover the stories they left behind.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:10px;padding-top:22px;border-top:1px solid var(--line)">
+              <a href="https://scarlettkcl-beep.github.io/ghost-rover/" target="_blank" rel="noopener" style="text-decoration:none;font-size:15px;font-weight:500;padding:13px 20px;background:var(--accent);color:var(--onaccent)">Play Ghost Rovers ↗</a>
+              <a href="https://github.com/scarlettkcl-beep/ghost-rover" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:var(--muted)">Source code ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+        <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:32px 0 48px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)">
+      <span>NASA Space Apps 2026</span>
+      <a href="index.html#projects" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--accent)">Explore more projects →</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lastLightPlayUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;lastLightSourceUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;ghostRoversPlayUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;ghostRoversSourceUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  bgs = {
+    "Graphite": {bg:"#16181a",panel:"#1f2225",text:"#e8eaeb",muted:"#a3a9ad"},
+    "Charcoal": {bg:"#121212",panel:"#1b1b1b",text:"#ededed",muted:"#a6a6a6"}
+  };
+  accents = {"Teal":"#4fd1c0","Neon green":"#9dff5c","Hot pink":"#e07aa6","Electric blue":"#4fa8ff","Neon violet":"#b388ff","Coral":"#ff7a6b","Sunny yellow":"#ffd84f","Cyan":"#3ff0ff"};
+  apply() {
+    const el = this.rootRef.current;
+    if (!el) return;
+    let bgName = "Charcoal", acName = "Hot pink";
+    try { const s = JSON.parse(localStorage.getItem("sk-portfolio-theme2") || "{}"); if (this.bgs[s.bg]) bgName = s.bg; if (this.accents[s.ac]) acName = s.ac; } catch (e) {}
+    const b = this.bgs[bgName];
+    for (const k in b) el.style.setProperty("--" + k, b[k]);
+    el.style.setProperty("--accent", this.accents[acName]);
+    el.style.setProperty("--onaccent", b.bg);
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() {
+    const u = v => (v && String(v).trim()) || "#";
+    return {
+      rootRef: this.rootRef,
+      llPlay: u(this.props.lastLightPlayUrl),
+      llSource: u(this.props.lastLightSourceUrl),
+      grPlay: u(this.props.ghostRoversPlayUrl),
+      grSource: u(this.props.ghostRoversSourceUrl)
+    };
+  }
+}
+</script>
+</body>
+</html>

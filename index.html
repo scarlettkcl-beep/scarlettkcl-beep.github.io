@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0}a{color:inherit}a:hover{opacity:.85}</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--bg:#121212;--panel:#1b1b1b;--text:#ededed;--muted:#a6a6a6;--accent:#e07aa6;--onaccent:#121212;--line:rgba(237,237,237,.12);background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;min-height:100vh">
+  <div style="max-width:1080px;margin:0 auto;padding:0 clamp(18px,5vw,28px)">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 0">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--muted)">SKCL / PORTFOLIO</span>
+      <div style="display:flex;gap:28px;font-size:15px;color:var(--muted)">
+        <a href="#projects" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none">Projects</a>
+        <a href="#experience" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none">Experience</a>
+        <a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--accent)">Contact</a>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(32px,6vw,56px);align-items:center;padding:clamp(44px,8vw,64px) 0 clamp(56px,10vw,96px)">
+      <div>
+        <h1 style="margin:0;font-family:'Familjen Grotesk',sans-serif;font-size:clamp(48px,7vw,72px);font-weight:600;letter-spacing:-.03em;line-height:1">Scarlett Khun Cho Lae</h1>
+        <p style="margin:24px 0 0;font-size:19px;line-height:1.6;color:var(--muted);max-width:44ch;text-wrap:pretty">Mechatronics engineering student working across embedded systems, electronics integration, and full-stack software.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);padding:clamp(20px,5vw,28px)">
+        <div style="display:grid;grid-template-columns:minmax(96px,120px) minmax(0,1fr);gap:18px 16px;font-size:15px;line-height:1.5">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">STUDYING</span>
+          <span>Mechatronic Systems Engineering, Simon Fraser University · First year</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">WORKING</span>
+          <span>Operations assistant, family restaurant</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">BUILDING WITH</span>
+          <span>C++, Autodesk, flight controllers, ESP32</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent);padding-top:3px">OFF HOURS</span>
+          <span>Photography, cooking, piano, bass</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects" style="border-top:1px solid var(--line);padding:clamp(44px,8vw,64px) 0 clamp(56px,10vw,96px)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:32px">
+        <h2 style="margin:0;font-family:'Familjen Grotesk',sans-serif;font-size:clamp(30px,6vw,40px);font-weight:600;letter-spacing:-.02em">Projects</h2>
+        <span style="font-size:15px;color:var(--muted)">More on the way</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:20px">
+<a href="project.html?p=study-quest" style="text-decoration:none;display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);padding:28px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">01 · SOFTWARE</span>
+          <h3 style="margin:6px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance">StudyQuest</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);flex:1;text-wrap:pretty">A full-stack peer-tutoring platform with StudyMatch, SideQuest, and Group Party, driven by XP levels and daily streaks.</p>
+          <span style="margin-top:10px;font-size:15px;color:var(--accent)">View project →</span>
+        </a>
+        <a href="project.html?p=rc-plane" style="text-decoration:none;display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);padding:28px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">02 · HARDWARE</span>
+          <h3 style="margin:6px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance">RC fixed-wing UAV</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);flex:1;text-wrap:pretty">A low-cost foam F‑22 Raptor for mapping hostile environments, from airframe fabrication to flight electronics.</p>
+          <span style="margin-top:10px;font-size:15px;color:var(--accent)">View project →</span>
+        </a>
+        <a href="project.html?p=lego-robot" style="text-decoration:none;display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);padding:28px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">03 · ROBOTICS</span>
+          <h3 style="margin:6px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance">Assistive memory robot</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);flex:1;text-wrap:pretty">A LEGO robot for elderly memory support, with medication reminders and memory games, tested with 10 users.</p>
+          <span style="margin-top:10px;font-size:15px;color:var(--accent)">View project →</span>
+        </a>
+        <a href="games.html" style="text-decoration:none;display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);padding:28px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">04 · GAMES</span>
+          <h3 style="margin:6px 0 0;font-family:'Familjen Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance">NASA Space Apps 2026</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);flex:1;text-wrap:pretty">Two 3D browser games about planetary exploration: Last Light and Ghost Rovers.</p>
+          <span style="margin-top:10px;font-size:15px;color:var(--accent)">View project →</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="experience" style="border-top:1px solid var(--line);padding:clamp(44px,8vw,64px) 0 clamp(48px,8vw,72px)">
+      <h2 style="margin:0 0 32px;font-family:'Familjen Grotesk',sans-serif;font-size:clamp(30px,6vw,40px);font-weight:600;letter-spacing:-.02em">Education &amp; experience</h2>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 40px;padding:28px 0;border-top:1px solid var(--line)">
+        <p style="flex:0 0 160px;margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">EDUCATION</p>
+        <div style="flex:1 1 min(320px,100%);min-width:0">
+          <h3 style="margin:0;font-family:'Familjen Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.25">B.A.Sc Mechatronics Systems Engineering</h3>
+          <p style="margin:6px 0 0;font-size:15px;color:var(--muted)">Simon Fraser University · First year</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 40px;padding:28px 0;border-top:1px solid var(--line)">
+        <p style="flex:0 0 160px;margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">EXPERIENCE</p>
+        <div style="flex:1 1 min(320px,100%);min-width:0">
+          <h3 style="margin:0;font-family:'Familjen Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.25">Operations assistant</h3>
+          <p style="margin:6px 0 0;font-size:15px;color:var(--muted)">Family restaurant</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" style="border-top:1px solid var(--line);padding:clamp(44px,8vw,64px) 0 48px">
+      <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--accent)">SAY HELLO</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:14px">
+        <a href="mailto:scarlett.kcl@gmail.com" style="font-family:'Familjen Grotesk',sans-serif;font-size:clamp(22px,5vw,36px);font-weight:600;letter-spacing:-.01em;text-decoration:none;overflow-wrap:anywhere">scarlett.kcl@gmail.com</a>
+        <a href="mailto:scarlett.kcl@gmail.com" style="text-decoration:none;font-size:16px;font-weight:500;padding:15px 24px;background:var(--accent);color:var(--onaccent)">Send an email</a>
+      </div>
+      <p style="margin:48px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)">© Scarlett Khun Cho Lae</p>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;background&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Charcoal&quot;,&quot;options&quot;:[&quot;Graphite&quot;,&quot;Charcoal&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colours&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Hot pink&quot;,&quot;options&quot;:[&quot;Teal&quot;,&quot;Neon green&quot;,&quot;Hot pink&quot;,&quot;Electric blue&quot;,&quot;Neon violet&quot;,&quot;Coral&quot;,&quot;Sunny yellow&quot;,&quot;Cyan&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colours&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  bgs = {
+    "Graphite": {bg:"#16181a",panel:"#1f2225",text:"#e8eaeb",muted:"#a3a9ad"},
+    "Charcoal": {bg:"#121212",panel:"#1b1b1b",text:"#ededed",muted:"#a6a6a6"}
+  };
+  accents = {
+    "Teal": "#4fd1c0",
+    "Neon green": "#9dff5c",
+    "Hot pink": "#e07aa6",
+    "Electric blue": "#4fa8ff",
+    "Neon violet": "#b388ff",
+    "Coral": "#ff7a6b",
+    "Sunny yellow": "#ffd84f",
+    "Cyan": "#3ff0ff"
+  };
+  apply() {
+    const el = this.rootRef.current;
+    if (!el) return;
+    const bgName = this.bgs[this.props.background] ? this.props.background : "Charcoal";
+    const acName = this.accents[this.props.accent] ? this.props.accent : "Hot pink";
+    const b = this.bgs[bgName];
+    for (const k in b) el.style.setProperty("--" + k, b[k]);
+    el.style.setProperty("--accent", this.accents[acName]);
+    el.style.setProperty("--onaccent", b.bg);
+    try { localStorage.setItem("sk-portfolio-theme2", JSON.stringify({bg:bgName, ac:acName})); } catch (e) {}
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>
